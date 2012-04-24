@@ -1,0 +1,118 @@
+<!DOCTYPE>
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />        
+    <style type="text/css" media="screen">@import "css/stylesheet.css";</style> 
+    <link href='http://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+    <title>Coloreame</title>   
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
+    <script type="text/javascript" src="js/rgbcolor.js"></script> 
+    <script type="text/javascript" src="js/canvg-1.0.js"></script> 
+    <script type="text/javascript" src="js/scripts.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+		<script type="text/javascript" src="js/bootstrap-dropdown.js"></script>
+    <script type="text/javascript">        
+        var currentImages=new Array();    
+        var currentColors=new Array();
+        var currentColorSelected="d3d3d3";
+        var currentElementDrawing="mexico.svg";
+				var currentRegion="BCS";
+				
+				function setCurrentRegion(text)
+				{
+						currentRegion=text;
+						readSVG(currentElementDrawing);
+						$("#edoActual").html(text);					
+				}
+    </script>         
+</head>
+<body onload="initialize()">
+    	<div class="navbar">
+			  <div class="navbar-inner">
+			    <div class="container">
+			      <a class="brand" href="#">
+			      		Tu Mapa Mexico
+			      </a>
+						<ul class="nav">
+						  <li><a href="#">Color estado actual:</a></li>
+						  <li class="active">
+						    <a href="#">
+									<div id="colorSlider">
+	                	<ul id="colorSliderColors">
+	                	</ul>
+	            		</div>
+								</a>
+						  </li>
+						 	<li class="dropdown" id="menu1">
+							    <a class="dropdown-toggle" data-toggle="dropdown" href="#menu1">
+							      Elige un estado
+							      <b class="caret"></b>
+							    </a>
+							    <ul class="dropdown-menu">
+							      <li><a href="#" onclick="setCurrentRegion('ALL'); return false;">Todos los estados</a></li>
+							      <li class="divider"></li>
+										<li><a href="#" onclick="setCurrentRegion('AGS'); return false;">Aguascalientes</a></li>							
+							      <li><a href="#" onclick="setCurrentRegion('BCN'); return false;">Baja California</a></li>
+							      <li><a href="#" onclick="setCurrentRegion('BCS'); return false;">Baja California Sur</a></li>
+							      <li><a href="#" onclick="setCurrentRegion('CAM'); return false;">Campeche</a></li>
+							      <li><a href="#" onclick="setCurrentRegion('CHI'); return false;">Chiapas</a></li>
+							      <li><a href="#" onclick="setCurrentRegion('CHH'); return false;">Chihuahua</a></li>
+							      <li class="divider"></li>														
+							      <li><a href="#" onclick="setCurrentRegion('COA'); return false;">Coahuila</a></li>
+							      <li class="divider"></li>														
+							      <li><a href="#" onclick="setCurrentRegion('COL'); return false;">Colima</a></li>
+							      <li><a href="#" onclick="setCurrentRegion('DUR'); return false;">Durango</a></li>
+							      <li><a href="#" onclick="setCurrentRegion('GUA'); return false;">Guanajuato</a></li>
+							      <li><a href="#" onclick="setCurrentRegion('GUE'); return false;">Guerrero</a></li>
+							      <li class="divider"></li>							
+						      	<li><a href="#" onclick="setCurrentRegion('HGO'); return false;">Hidalgo</a></li>
+							      <li><a href="#" onclick="setCurrentRegion('JAL'); return false;">Jalisco</a></li>
+							      <li><a href="#" onclick="setCurrentRegion('MHC'); return false;">Michoacán</a></li>
+							      <li><a href="#" onclick="setCurrentRegion('MOR'); return false;">Morelos</a></li>
+							      <li><a href="#" onclick="setCurrentRegion('MEX'); return false;">Estado de México</a></li>
+							      <li><a href="#" onclick="setCurrentRegion('NAY'); return false;">Nayarit</a></li>
+							      <li><a href="#" onclick="setCurrentRegion('NL'); return false;">Nuevo León</a></li>
+							      <li><a href="#" onclick="setCurrentRegion('OAX'); return false;">Oaxaca</a></li>
+							      <li><a href="#" onclick="setCurrentRegion('PUE'); return false;">Puebla</a></li>
+							      <li><a href="#" onclick="setCurrentRegion('QRO'); return false;">Querétaro</a></li>
+							      <li><a href="#" onclick="setCurrentRegion('QUI'); return false;">Quintana Roo</a></li>
+							      <li><a href="#" onclick="setCurrentRegion('SLP'); return false;">San Luis Potosí</a></li>
+							      <li><a href="#" onclick="setCurrentRegion('SIN'); return false;">Sinaloa</a></li>
+							      <li><a href="#" onclick="setCurrentRegion('SON'); return false;">Sonora</a></li>
+							      <li><a href="#" onclick="setCurrentRegion('TAB'); return false;">Tabasco</a></li>
+							      <li><a href="#" onclick="setCurrentRegion('TAM'); return false;">Tamaulipas</a></li>
+							      <li><a href="#" onclick="setCurrentRegion('TLA'); return false;">Tlaxcala</a></li>							      
+										<li><a href="#" onclick="setCurrentRegion('VER'); return false;">Veracruz</a></li>
+						      	<li><a href="#" onclick="setCurrentRegion('YUC'); return false;">Yucatán</a></li>
+				      			<li><a href="#" onclick="setCurrentRegion('ZAC'); return false;">Zacatecas</a></li>
+							    </ul>
+							  </li>
+							  <li><a href="#">Estado actual:</a></li>
+							  <li><a id="edoActual" href="#">Baja California Sur</a></li>							
+						</ul>
+			    </div>
+			  </div>
+			</div>
+			<div id="content" class="container">			
+           <div id="cvt" >
+                    <canvas id="canvasAvatar" width="1024" height="640">
+                    </canvas>
+                    <canvas id="tempCanvas" style="display:none" width="1024" height="640"></canvas>
+                   	<a href="#" class="btn btn-primary">descarga tu mapa</a>
+										<!-- AddThis Button BEGIN -->
+										<div class="addthis_toolbox addthis_default_style ">
+										<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+										<a class="addthis_button_tweet"></a>
+										<a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+										<a class="addthis_counter addthis_pill_style"></a>
+										</div>
+										<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4f96c6f643ffd270"></script>
+										<!-- AddThis Button END -->			
+
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/InteractiveResource" property="dct:title" rel="dct:type">Colorea.me</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="www.paypergeek.com" property="cc:attributionName" rel="cc:attributionURL">Pedro Aron Barrera Almaraz</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="www.paypergeek.com/mapa/index.html" rel="dct:source">www.paypergeek.com/mapa/index.html</a>.
+           </div>    
+      </div>   
+<a href="http://github.com/peterpay"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/camo.github.com/abad93f42020b733148435e2cd92ce15c542d320/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub"></a>         
+</body>
+</html>

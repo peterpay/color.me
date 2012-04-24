@@ -1,0 +1,151 @@
+BODY
+{
+	background-color: transparent;
+	margin: 0 auto;
+	width: 100%;
+	font-size: 11px;
+	font-family: verdana;
+	min-width: 1024;
+}
+DIV
+{
+	padding: 0px;
+}
+UL LI
+{
+	display: inline-block;
+}
+H1
+{
+	font-size: 15px;
+}
+#content
+{
+	width: 80%;
+	margin: 0 auto;
+	height: 600px;
+}
+.underTitle
+{
+	text-align: center;
+	font-family: Bangers, cursive;
+	background-color: #D3D3D3;
+	height: 60px;
+}
+.tabTitle
+{
+	border: 1px solid #000;
+	width: 18%;
+	min-width: 120px;
+	border-bottom: 5px solid #FFF;
+	text-align: center;
+	vertical-align: middle;
+	position: absolute;
+	z-index: 3000;
+	margin-top: -52px;
+}
+.subContainer
+{
+	border: 1px solid #000;
+	height: 600px;
+	margin-top: 50px;
+}
+#firstMenu
+{
+	width: 97%;
+	height: 45px;
+	text-align: left;
+	background-color: #252525;
+	border-radius: 3px 3px 3px 3px;
+	vertical-align: middle;
+	color: #FFFFFF;
+	margin: 0 auto;
+}
+#subCategoryMenu
+{
+	width: 97%;
+	margin: 0 auto;
+}
+#middleContainer
+{
+	width: 97%;
+	margin: 0 auto;
+}
+#currentItemsSubtitle
+{
+	display: inline-block;
+	padding-left: 3em;
+}
+#currentSubMenu
+{
+	height: 3em;
+	background-color: #D3D3D3;
+	border-radius: 0px 0px 5px 5px;
+	display: inline-block;
+	width: 50%;
+	float: right;
+}
+#currentSubMenu UL
+{
+	margin-top: -1%;
+	vertical-align: middle;
+	text-align: center;
+}
+#stepHeader
+{
+	font-family: Bangers, cursive;
+	display: inline-block;
+}
+#headerGridImages
+{
+	width: 100%;
+	border-bottom: 1px solid #000000;
+}
+#headerGridImageText
+{
+	font-family: Bangers, cursive;
+	display: inline-block;
+	vertical-align: bottom;
+}
+#pagerItems
+{
+	display: inline-block;
+	float: right;
+}
+#gridImages
+{
+	margin: 0 auto;
+	display: inline-block;
+	text-align: left;
+}
+#currentElements
+{
+	width: 66%;
+	margin: 0 auto;
+	display: inline-block;
+	text-align: left;
+	float: none;
+	vertical-align: top;
+}
+#currentAvatar
+{
+	display: inline-block;
+	background-color: transparent;
+	border: 3px solid #000000;
+	width: auto;
+	margin-left: 2%;
+	float: right;
+	margin-top: 0%;
+}
+#canvasAvatar
+{
+	margin: 0 auto;
+}
+#grid
+{
+	margin-left: -12%;
+}
+#grid LI
+{
+	padding: 5px;
+}
