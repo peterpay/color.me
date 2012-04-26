@@ -1,28 +1,3 @@
-function avatarElement(type)
-        {
-            this.type=type;
-            this.id=0;
-            this.xcoordinate=0;
-            this.ycoordinate=0;
-            this.image="";  
-            this.isDynamic=false;
-            this.category=0;
-            this.subcategory=0;
-            this.colorRanges=new Array();
-            this.colorSelected="FFFFFF";
-            this.isDeleted=false;
-            this.isVisible=true;      
-        }
-
-
-        function clear() {
-                  var ctx =this.document.getElementById("currentAvatar").getContext("2d");//.getContext("2d");
-                  ctx.width=ctx.width;
-                  ctx.clearRect(0, 0, 1024, 768);                                  
-        }
-
-
-
 
 function createTooltip(event){        
     var popupString="<div class=\"tooltip\" style=\"background-image:url('images/dropImage.png'); position:absolute; background-color:transparent; height:40px; width:30px; z-index:101;\"> <div  style=\"width:20px; height:20px; border-radius:20px; position:relative; left:5px; top:15px; z-index:-1;  background-color:"+ event.target.style.backgroundColor +"\"></div></div>";    
