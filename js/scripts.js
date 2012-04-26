@@ -278,13 +278,6 @@ function saveCanvas()
 {
 				var canvasFinal=document.getElementById("canvasAvatar");
 				var dataURL = canvasFinal.toDataURL("image/png");
-				var myAvatar ={
-					Avatar_ID:0,
-					Image_Data:dataURL,
-					Avatar_Config:"ESTA ES LA CONFIGURACION"
-				};
-				$.post("http://kidsocial.net/kidsocial/services/avatar_editor_save",myAvatar);
-
 }
 
 
