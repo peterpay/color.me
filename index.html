@@ -14,6 +14,7 @@
     <script type="text/javascript" src="js/scripts.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
 		<script type="text/javascript" src="js/bootstrap-dropdown.js"></script>
+		<script type="text/javascript" src="js/bootstrap-modal.js"></script>
     <script type="text/javascript">        
         var currentImages=new Array();    
         var currentColors=new Array();
@@ -37,12 +38,15 @@
 			      		Tu Mapa Mexico
 			      </a>
 						<ul class="nav">
-						  <li>Color estado actual:</li>
+						  <li><a href="#" onclick="return false;">
+							Color estado actual:</a></li>
 						  <li class="active">
+									<a href="#" onclick="return false;">
 									<div id="colorSlider">
 	                	<ul id="colorSliderColors">
 	                	</ul>
 	            		</div>
+									</a>
 						  </li>
 						 	<li class="dropdown" id="menu1">
 							    <a class="dropdown-toggle" data-toggle="dropdown" href="#menu1">
@@ -90,12 +94,13 @@
 			    </div>
 			  </div>
 			</div>
-			<div id="content" class="container">			
+			<div id="content" class="container">		
+					
            <div id="cvt" >
                     <canvas id="canvasAvatar" width="1024" height="640">
                     </canvas>
                     <canvas id="tempCanvas" style="display:none" width="1024" height="640"></canvas>
-                   	<a href="#" class="btn btn-primary" onclick="saveMe(); return false;">descarga tu mapa</a>
+                   	<a href="#" class="btn btn-primary" onclick="saveCanvas(); return false;">descarga tu mapa</a>
 										<!-- AddThis Button BEGIN -->
 										<div class="addthis_toolbox addthis_default_style ">
 										<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
@@ -108,7 +113,20 @@
 
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/InteractiveResource" property="dct:title" rel="dct:type">Colorea.me</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="www.paypergeek.com" property="cc:attributionName" rel="cc:attributionURL">Pedro Aron Barrera Almaraz</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="www.paypergeek.com/mapa/index.html" rel="dct:source">www.paypergeek.com/mapa/index.html</a>.
            </div>    
-      </div>   
+					<div class="modal" style="display:none" id="myModal">
+					  <div class="modal-header">
+					    <button class="close" data-dismiss="modal">×</button>
+					    <h3>Gracias por tener tu mapa con nosotros</h3>
+					  </div>
+					  <div class="modal-body">
+					    <p><img id="myGeneratedMap" /></p>
+					  </div>
+					  <div class="modal-footer">
+					    <a href="#" class="btn">Close</a>
+					    <a href="#" class="btn btn-primary">Save changes</a>
+					  </div>
+					</div>      
+</div>   
 <a href="http://github.com/peterpay"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/camo.github.com/abad93f42020b733148435e2cd92ce15c542d320/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub"></a>         
 </body>
 </html>

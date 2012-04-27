@@ -253,6 +253,8 @@ function saveCanvas()
 {
 				var canvasFinal=document.getElementById("canvasAvatar");
 				var dataURL = canvasFinal.toDataURL("image/png");
+				$('#myModal').modal("show");
+				$('#myGeneratedMap').attr("src",dataURL);
 }
 
 
