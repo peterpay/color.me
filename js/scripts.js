@@ -178,7 +178,7 @@ function processReqChange() {
 	       resp.getElementsByTagName("svg")[0].getElementById(currentRegion).attributes["fill"].value=currentColorSelected;
        }
        		       
-		canvg('tempCanvas', resp ,{ ignoreMouse: true, ignoreAnimation: true, scaleWidth: 50,scaleHeight:50 });
+		canvg('tempCanvas', resp ,{ ignoreMouse: true, ignoreAnimation: true, scaleWidth: 1024,scaleHeight:640 });
 		var canvasTemporal=document.getElementById("tempCanvas");
 		var canvasFinal=document.getElementById("canvasAvatar");
 		var ctx= canvasTemporal.getContext("2d");
